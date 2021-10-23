@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,14 @@
 		B74D09B7272426F00060159B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D09B5272426F00060159B /* Main.storyboard */; };
 		B74D09B9272426F10060159B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74D09B8272426F10060159B /* Assets.xcassets */; };
 		B74D09BC272426F10060159B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D09BA272426F10060159B /* LaunchScreen.storyboard */; };
+		B7E5F78A272433CE009CC492 /* ChoiceModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F789272433CE009CC492 /* ChoiceModeController.swift */; };
+		B7E5F78D272436D2009CC492 /* MainWindowTabsTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F78C272436D2009CC492 /* MainWindowTabsTrip.swift */; };
+		B7E5F79327243958009CC492 /* TripGoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79227243958009CC492 /* TripGoController.swift */; };
+		B7E5F795272439DD009CC492 /* TripCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F794272439DD009CC492 /* TripCreateController.swift */; };
+		B7E5F79727243A33009CC492 /* TripFavoiriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79627243A33009CC492 /* TripFavoiriteController.swift */; };
+		B7E5F79927243A73009CC492 /* TripUserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79827243A73009CC492 /* TripUserSettingController.swift */; };
+		B7E5F79C2724479F009CC492 /* TripGestureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79B2724479F009CC492 /* TripGestureHelper.swift */; };
+		B7E5F79F272447F4009CC492 /* TripMarkerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79E272447F4009CC492 /* TripMarkerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		B74D09B8272426F10060159B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B74D09BB272426F10060159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B74D09BD272426F10060159B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7E5F789272433CE009CC492 /* ChoiceModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceModeController.swift; sourceTree = "<group>"; };
+		B7E5F78C272436D2009CC492 /* MainWindowTabsTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowTabsTrip.swift; sourceTree = "<group>"; };
+		B7E5F79227243958009CC492 /* TripGoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGoController.swift; sourceTree = "<group>"; };
+		B7E5F794272439DD009CC492 /* TripCreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCreateController.swift; sourceTree = "<group>"; };
+		B7E5F79627243A33009CC492 /* TripFavoiriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFavoiriteController.swift; sourceTree = "<group>"; };
+		B7E5F79827243A73009CC492 /* TripUserSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripUserSettingController.swift; sourceTree = "<group>"; };
+		B7E5F79B2724479F009CC492 /* TripGestureHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGestureHelper.swift; sourceTree = "<group>"; };
+		B7E5F79E272447F4009CC492 /* TripMarkerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMarkerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +64,6 @@
 				1B470947B6CD2074091C865F /* Pods-trip_go.debug.xcconfig */,
 				3DC5B1694C93B775768037F3 /* Pods-trip_go.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,8 +96,15 @@
 		B74D09AE272426F00060159B /* trip_go */ = {
 			isa = PBXGroup;
 			children = (
-				B74D09AF272426F00060159B /* AppDelegate.swift */,
-				B74D09B1272426F00060159B /* SceneDelegate.swift */,
+				B7E5F79D272447DE009CC492 /* TripHelperMarker */,
+				B7E5F79A27244780009CC492 /* TripHelper_Gesture */,
+				B7E5F78F2724373E009CC492 /* TripGoController */,
+				B7E5F79027243756009CC492 /* TripCreateController */,
+				B7E5F79127243767009CC492 /* TripFavoiriteController */,
+				B7E5F78E27243722009CC492 /* TripUserSettingController */,
+				B7E5F78B27243689009CC492 /* MainWIndowTabs */,
+				B7E5F788272433A5009CC492 /* MainViewApp */,
+				B7E5F7872724334E009CC492 /* AppDelegate */,
 				B74D09B3272426F00060159B /* ViewController.swift */,
 				B74D09B5272426F00060159B /* Main.storyboard */,
 				B74D09B8272426F10060159B /* Assets.xcassets */,
@@ -90,6 +112,79 @@
 				B74D09BD272426F10060159B /* Info.plist */,
 			);
 			path = trip_go;
+			sourceTree = "<group>";
+		};
+		B7E5F7872724334E009CC492 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B74D09AF272426F00060159B /* AppDelegate.swift */,
+				B74D09B1272426F00060159B /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B7E5F788272433A5009CC492 /* MainViewApp */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F789272433CE009CC492 /* ChoiceModeController.swift */,
+			);
+			path = MainViewApp;
+			sourceTree = "<group>";
+		};
+		B7E5F78B27243689009CC492 /* MainWIndowTabs */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F78C272436D2009CC492 /* MainWindowTabsTrip.swift */,
+			);
+			path = MainWIndowTabs;
+			sourceTree = "<group>";
+		};
+		B7E5F78E27243722009CC492 /* TripUserSettingController */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F79827243A73009CC492 /* TripUserSettingController.swift */,
+			);
+			path = TripUserSettingController;
+			sourceTree = "<group>";
+		};
+		B7E5F78F2724373E009CC492 /* TripGoController */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F79227243958009CC492 /* TripGoController.swift */,
+			);
+			path = TripGoController;
+			sourceTree = "<group>";
+		};
+		B7E5F79027243756009CC492 /* TripCreateController */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F794272439DD009CC492 /* TripCreateController.swift */,
+			);
+			path = TripCreateController;
+			sourceTree = "<group>";
+		};
+		B7E5F79127243767009CC492 /* TripFavoiriteController */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F79627243A33009CC492 /* TripFavoiriteController.swift */,
+			);
+			path = TripFavoiriteController;
+			sourceTree = "<group>";
+		};
+		B7E5F79A27244780009CC492 /* TripHelper_Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F79B2724479F009CC492 /* TripGestureHelper.swift */,
+			);
+			path = TripHelper_Gesture;
+			sourceTree = "<group>";
+		};
+		B7E5F79D272447DE009CC492 /* TripHelperMarker */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F79E272447F4009CC492 /* TripMarkerHelper.swift */,
+			);
+			path = TripHelperMarker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +301,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E5F78D272436D2009CC492 /* MainWindowTabsTrip.swift in Sources */,
+				B7E5F79327243958009CC492 /* TripGoController.swift in Sources */,
 				B74D09B4272426F00060159B /* ViewController.swift in Sources */,
+				B7E5F78A272433CE009CC492 /* ChoiceModeController.swift in Sources */,
+				B7E5F79F272447F4009CC492 /* TripMarkerHelper.swift in Sources */,
+				B7E5F79927243A73009CC492 /* TripUserSettingController.swift in Sources */,
+				B7E5F79727243A33009CC492 /* TripFavoiriteController.swift in Sources */,
 				B74D09B0272426F00060159B /* AppDelegate.swift in Sources */,
 				B74D09B2272426F00060159B /* SceneDelegate.swift in Sources */,
+				B7E5F79C2724479F009CC492 /* TripGestureHelper.swift in Sources */,
+				B7E5F795272439DD009CC492 /* TripCreateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
