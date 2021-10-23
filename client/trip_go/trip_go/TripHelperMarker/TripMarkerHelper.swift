@@ -49,8 +49,8 @@ extension TripGoController {
     func addRoute() {
         
         let routingMode = NMARoutingMode.init(
-            routingType: NMARoutingType.fastest,
-            transportMode: NMATransportMode.pedestrian,
+            routingType: NMARoutingType.shortest,
+            transportMode: NMATransportMode.car,
             routingOptions: []
         )
         routingMode.resultLimit = 1

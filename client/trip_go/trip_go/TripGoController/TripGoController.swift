@@ -26,6 +26,8 @@ class TripGoController: UIViewController {
     let serachingAdress = UILabel()
     // routing config
     let routingConfigView = UIView()
+    // detailRoute
+    let detail_view = UIView()
     // layer button
     let layerButton = UIButton(type: .system)
     // plus zoom
@@ -42,6 +44,13 @@ class TripGoController: UIViewController {
     let addPointButton = UIButton(type: .system)
     // reset point
     let resetRouteButton = UIButton(type: .system)
+    
+    //
+    var stackDetail = UIStackView()
+    var scrollView  = UIScrollView()
+    var viewDetail  = UIView()
+
+    //
     
     var coreRouter: NMACoreRouter!
     var mapRouts = [NMAMapRoute]()
@@ -161,10 +170,10 @@ class TripGoController: UIViewController {
         routingConfigView.snp.makeConstraints { (marker) in
             marker.bottom.equalToSuperview().inset(-10)
             marker.width.equalTo(self.view.frame.width)
-            marker.height.equalTo(self.view.frame.height/4)
+            marker.height.equalTo(self.view.frame.height/3)
             marker.right.left.equalToSuperview().inset(0)
         }
-        routingConfigView.isHidden = true
+        routingConfigView.isHidden = false
         
         // serachingAdress
         serachingAdress.font = UIFont.systemFont(ofSize: 16)
@@ -177,7 +186,7 @@ class TripGoController: UIViewController {
         routingConfigView.addSubview(serachingAdress)
        
         serachingAdress.snp.makeConstraints { (marker) in
-            marker.bottomMargin.equalToSuperview().inset(5)
+            //marker.bottomMargin.equalToSuperview().inset(5)
             marker.top.equalToSuperview().inset(10)
             marker.height.equalTo(30)
             marker.width.equalTo(routingConfigView.frame.width - 10)
@@ -198,7 +207,7 @@ class TripGoController: UIViewController {
         routingConfigView.addSubview(fromPointButton)
        
         fromPointButton.snp.makeConstraints { (marker) in
-            marker.bottomMargin.equalToSuperview().inset(5)
+            //marker.bottomMargin.equalToSuperview().inset(5)
             marker.top.equalTo(serachingAdress).inset(45)
             marker.height.equalTo(35)
             marker.width.equalTo(75)
@@ -217,12 +226,14 @@ class TripGoController: UIViewController {
         routingConfigView.addSubview(toPointButton)
         toPointButton.addTarget(self, action: #selector(self.toPointAction(_:)), for: .touchUpInside)
         toPointButton.snp.makeConstraints { (marker) in
-            marker.bottomMargin.equalToSuperview().inset(5)
+            //marker.bottomMargin.equalToSuperview().inset(5)
             marker.top.equalTo(serachingAdress).inset(45)
             marker.height.equalTo(35)
             marker.width.equalTo(75)
             marker.left.equalTo(fromPointButton).inset(100)
         }
+        toPointButton.isHidden = false
+
         // additionak point
         addPointButton.setTitle("Transit", for: .normal)
         addPointButton.setTitleColor(.white, for: .normal)
@@ -236,12 +247,14 @@ class TripGoController: UIViewController {
         addPointButton.addTarget(self, action: #selector(self.additionalPoint(_:)), for: .touchUpInside)
 
         addPointButton.snp.makeConstraints { (marker) in
-            marker.bottomMargin.equalToSuperview().inset(5)
+            //marker.bottomMargin.equalToSuperview().inset(5)
             marker.top.equalTo(serachingAdress).inset(45)
             marker.height.equalTo(35)
             marker.width.equalTo(75)
             marker.left.equalTo(toPointButton).inset(100)
         }
+        addPointButton.isHidden = false
+
         // reset route
         resetRouteButton.setTitle("Маршрут", for: .normal)
         resetRouteButton.setTitleColor(.white, for: .normal)
@@ -255,13 +268,88 @@ class TripGoController: UIViewController {
         resetRouteButton.addTarget(self, action: #selector(self.resetRouteAction(_:)), for: .touchUpInside)
 
         resetRouteButton.snp.makeConstraints { (marker) in
-            marker.bottomMargin.equalToSuperview().inset(5)
+            //marker.bottomMargin.equalToSuperview().inset(-8)
             marker.top.equalTo(serachingAdress).inset(45)
             marker.height.equalTo(35)
-            marker.width.equalTo(40)
+            marker.width.equalTo(100)
             marker.left.equalTo(addPointButton).inset(100)
         }
         resetRouteButton.isHidden = false
+        
+        routingConfigView.addSubview(viewDetail)
+        viewDetail.backgroundColor = .clear//#colorLiteral(red: 0.1676526818, green: 0.1903925995, blue: 0.2580723713, alpha: 1)
+        viewDetail.layer.cornerRadius = 0
+        viewDetail.snp.makeConstraints { (marker) in
+            marker.top.equalTo(resetRouteButton).inset(45)
+            marker.bottom.equalToSuperview().inset(-10)
+
+            //marker.width.equalTo(self.view.frame.width)
+            //marker.height.equalTo(self.view.frame.height/4)
+            marker.right.left.equalToSuperview().inset(0)
+        }
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        viewDetail.addSubview(scrollView)
+        
+        scrollView.snp.makeConstraints { (marker) in
+            marker.edges.equalToSuperview()
+        }
+        
+        stackDetail.translatesAutoresizingMaskIntoConstraints = false
+        stackDetail.axis = .horizontal
+        stackDetail.alignment = .bottom
+        stackDetail.spacing = 20
+        scrollView.addSubview(stackDetail)
+               
+        stackDetail.snp.makeConstraints { (marker) in
+            marker.edges.equalToSuperview()
+        }
+        
+        for i in 1 ..< 40 {
+            let vw = UIButton(type: .system)
+            vw.setTitle("Маршрут", for: .normal)
+            vw.setTitleColor(.white, for: .normal)
+            vw.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+            vw.tintColor = .white
+            vw.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)//#colorLiteral(red: 0.1676526818, green: 0.1903925995, blue: 0.2580723713, alpha: 1)
+            vw.layer.cornerRadius = 10
+            vw.layer.shadowRadius = 1.5
+            vw.layer.shadowColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            
+            stackDetail.addArrangedSubview(vw)
+            
+            vw.snp.makeConstraints { (marker) in
+                marker.height.equalTo(40)
+                marker.width.equalTo(100)
+            }
+        }
+        /// ***
+        /// add stack view
+        // routing config
+        /*routingConfigView.addSubview(routeChoice)
+        
+        
+        
+        routeChoice.distribution = .equalSpacing
+        routeChoice.alignment = .fill
+        routeChoice.axis = .vertical
+        routeChoice.spacing = 10
+        routeChoice.backgroundColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)//#colorLiteral(red: 0.1676526818, green: 0.1903925995, blue: 0.2580723713, alpha: 1)
+        routeChoice.layer.cornerRadius = 15
+        routeChoice.snp.makeConstraints { (marker) in
+            marker.top.equalTo(resetRouteButton).inset(10)
+            marker.width.equalTo(routingConfigView.frame.width)
+            marker.height.equalTo(routingConfigView.frame.height/4)
+            marker.right.left.equalToSuperview().inset(0)
+            marker.bottomMargin.equalToSuperview().inset(10)
+        }
+        // add cell to stackview
+        routeChoice.addArrangedSubview(detail_view)
+        detail_view.layer.cornerRadius = 20
+        detail_view.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        
+        
+        /// *** end stack view
+        */
     }
     // layer action
     @objc func layerAction(_ sender:UIButton) {
