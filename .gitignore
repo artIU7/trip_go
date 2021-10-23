@@ -9,3 +9,6 @@ video/*
 sketch/*
 presentation/*
 doc/*
+.gitignore
+auto_commit.sh
+
