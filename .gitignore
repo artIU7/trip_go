@@ -1,0 +1,11 @@
+client/trip_go/Pods/
+client/trip_creater/Pods/
+backend/trip_service/Dockerfile
+backend/trip_service/docker-compose.yml
+backend/trip_service/.build
+backend/trip_service/.dockerignore
+backend/trip_service/.swiftpm
+video/*
+sketch/*
+presentation/*
+doc/*
