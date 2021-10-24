@@ -26,10 +26,10 @@ extension TripGoController {
     func addMarkerStopPoi(_ positionAnchor : NMAGeoCoordinates, index : Int, markerUI : UIImage) {
         let marker = NMAMapMarker(geoCoordinates: positionAnchor, image: markerUI)
           marker.resetIconSize()
-          marker.setSize(CGSize(width: 1, height: 1), forZoomRange: NSRange(location: 5,length: 20))
+          marker.setSize(CGSize(width: 2, height: 2), forZoomRange: NSRange(location: 5,length: 20))
           clusterTemp.addMarker(marker)
           self.mapView.add(clusterLayer: clusterTemp)
-          self.mapView.add(mapObject: marker)
+          //self.mapView.add(mapObject: marker)
       }
     public func createCircle(geoCoord : NMAGeoCoordinates, color : UIColor,rad : Int) {
             //create NMAMapCircle located at geo coordiate and with radium in meters
@@ -49,11 +49,11 @@ extension TripGoController {
     func addRoute() {
         
         let routingMode = NMARoutingMode.init(
-            routingType: NMARoutingType.shortest,
+            routingType: NMARoutingType.fastest,
             transportMode: NMATransportMode.car,
             routingOptions: []
         )
-        routingMode.resultLimit = 1
+        routingMode.resultLimit = 10
 
         // check if calculation completed otherwise cancel.
         if !(progress?.isFinished ?? false) {
@@ -62,7 +62,7 @@ extension TripGoController {
 
         // Use banned areas if needed
         //addBannedAreas(coreRouter);
-
+        print(route_points)
         // store progress.
         progress = coreRouter.calculateRoute(withStops: route_points, routingMode: routingMode, { (routeResult, error) in
             if (error != NMARoutingError.none) {

@@ -72,7 +72,6 @@ class MainWindowTabsTrip: UITabBarController,UITabBarControllerDelegate {
         tabBar.frame.size.height = 55
         tabBar.frame.origin.y = view.frame.height - 55
     }
-
 }
 
 

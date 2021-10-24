@@ -14,6 +14,9 @@
 		B74D09B7272426F00060159B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D09B5272426F00060159B /* Main.storyboard */; };
 		B74D09B9272426F10060159B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74D09B8272426F10060159B /* Assets.xcassets */; };
 		B74D09BC272426F10060159B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D09BA272426F10060159B /* LaunchScreen.storyboard */; };
+		B78BE00F2725151F00B90BF1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BE00E2725151F00B90BF1 /* LocationManager.swift */; };
+		B78BE0122725233500B90BF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BE0112725233500B90BF1 /* NetworkManager.swift */; };
+		B78BE01527252A4300B90BF1 /* ModelRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BE01427252A4300B90BF1 /* ModelRoute.swift */; };
 		B7E5F78A272433CE009CC492 /* ChoiceModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F789272433CE009CC492 /* ChoiceModeController.swift */; };
 		B7E5F78D272436D2009CC492 /* MainWindowTabsTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F78C272436D2009CC492 /* MainWindowTabsTrip.swift */; };
 		B7E5F79327243958009CC492 /* TripGoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79227243958009CC492 /* TripGoController.swift */; };
@@ -22,6 +25,8 @@
 		B7E5F79927243A73009CC492 /* TripUserSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79827243A73009CC492 /* TripUserSettingController.swift */; };
 		B7E5F79C2724479F009CC492 /* TripGestureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79B2724479F009CC492 /* TripGestureHelper.swift */; };
 		B7E5F79F272447F4009CC492 /* TripMarkerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F79E272447F4009CC492 /* TripMarkerHelper.swift */; };
+		B7E5F7A227249ED6009CC492 /* ViewDetailRouteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F7A127249ED6009CC492 /* ViewDetailRouteController.swift */; };
+		B7E5F7A52724FDD8009CC492 /* TripGeocoder+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E5F7A42724FDD8009CC492 /* TripGeocoder+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,9 @@
 		B74D09B8272426F10060159B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B74D09BB272426F10060159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B74D09BD272426F10060159B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B78BE00E2725151F00B90BF1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B78BE0112725233500B90BF1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B78BE01427252A4300B90BF1 /* ModelRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRoute.swift; sourceTree = "<group>"; };
 		B7E5F789272433CE009CC492 /* ChoiceModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceModeController.swift; sourceTree = "<group>"; };
 		B7E5F78C272436D2009CC492 /* MainWindowTabsTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowTabsTrip.swift; sourceTree = "<group>"; };
 		B7E5F79227243958009CC492 /* TripGoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGoController.swift; sourceTree = "<group>"; };
@@ -44,6 +52,8 @@
 		B7E5F79827243A73009CC492 /* TripUserSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripUserSettingController.swift; sourceTree = "<group>"; };
 		B7E5F79B2724479F009CC492 /* TripGestureHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGestureHelper.swift; sourceTree = "<group>"; };
 		B7E5F79E272447F4009CC492 /* TripMarkerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMarkerHelper.swift; sourceTree = "<group>"; };
+		B7E5F7A127249ED6009CC492 /* ViewDetailRouteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailRouteController.swift; sourceTree = "<group>"; };
+		B7E5F7A42724FDD8009CC492 /* TripGeocoder+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TripGeocoder+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,8 @@
 		B74D09AE272426F00060159B /* trip_go */ = {
 			isa = PBXGroup;
 			children = (
+				B78BE0102725231F00B90BF1 /* NetworkManager */,
+				B7E5F7A027249EAC009CC492 /* TripDetailRoute */,
 				B7E5F79D272447DE009CC492 /* TripHelperMarker */,
 				B7E5F79A27244780009CC492 /* TripHelper_Gesture */,
 				B7E5F78F2724373E009CC492 /* TripGoController */,
@@ -112,6 +124,30 @@
 				B74D09BD272426F10060159B /* Info.plist */,
 			);
 			path = trip_go;
+			sourceTree = "<group>";
+		};
+		B78BE00D2725150500B90BF1 /* LocationManager+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B78BE00E2725151F00B90BF1 /* LocationManager.swift */,
+			);
+			path = "LocationManager+Helper";
+			sourceTree = "<group>";
+		};
+		B78BE0102725231F00B90BF1 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				B78BE0112725233500B90BF1 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		B78BE01327252A3300B90BF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B78BE01427252A4300B90BF1 /* ModelRoute.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B7E5F7872724334E009CC492 /* AppDelegate */ = {
@@ -150,6 +186,8 @@
 		B7E5F78F2724373E009CC492 /* TripGoController */ = {
 			isa = PBXGroup;
 			children = (
+				B78BE00D2725150500B90BF1 /* LocationManager+Helper */,
+				B7E5F7A32724FDB9009CC492 /* Geocoder+Helper */,
 				B7E5F79227243958009CC492 /* TripGoController.swift */,
 			);
 			path = TripGoController;
@@ -185,6 +223,23 @@
 				B7E5F79E272447F4009CC492 /* TripMarkerHelper.swift */,
 			);
 			path = TripHelperMarker;
+			sourceTree = "<group>";
+		};
+		B7E5F7A027249EAC009CC492 /* TripDetailRoute */ = {
+			isa = PBXGroup;
+			children = (
+				B7E5F7A127249ED6009CC492 /* ViewDetailRouteController.swift */,
+			);
+			path = TripDetailRoute;
+			sourceTree = "<group>";
+		};
+		B7E5F7A32724FDB9009CC492 /* Geocoder+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B78BE01327252A3300B90BF1 /* Model */,
+				B7E5F7A42724FDD8009CC492 /* TripGeocoder+Helper.swift */,
+			);
+			path = "Geocoder+Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,13 +358,18 @@
 			files = (
 				B7E5F78D272436D2009CC492 /* MainWindowTabsTrip.swift in Sources */,
 				B7E5F79327243958009CC492 /* TripGoController.swift in Sources */,
+				B7E5F7A52724FDD8009CC492 /* TripGeocoder+Helper.swift in Sources */,
 				B74D09B4272426F00060159B /* ViewController.swift in Sources */,
 				B7E5F78A272433CE009CC492 /* ChoiceModeController.swift in Sources */,
 				B7E5F79F272447F4009CC492 /* TripMarkerHelper.swift in Sources */,
 				B7E5F79927243A73009CC492 /* TripUserSettingController.swift in Sources */,
 				B7E5F79727243A33009CC492 /* TripFavoiriteController.swift in Sources */,
+				B7E5F7A227249ED6009CC492 /* ViewDetailRouteController.swift in Sources */,
 				B74D09B0272426F00060159B /* AppDelegate.swift in Sources */,
+				B78BE00F2725151F00B90BF1 /* LocationManager.swift in Sources */,
+				B78BE01527252A4300B90BF1 /* ModelRoute.swift in Sources */,
 				B74D09B2272426F00060159B /* SceneDelegate.swift in Sources */,
+				B78BE0122725233500B90BF1 /* NetworkManager.swift in Sources */,
 				B7E5F79C2724479F009CC492 /* TripGestureHelper.swift in Sources */,
 				B7E5F795272439DD009CC492 /* TripCreateController.swift in Sources */,
 			);
