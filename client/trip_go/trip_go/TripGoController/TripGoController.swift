@@ -24,6 +24,16 @@ let lat         = "lat=";
 let lng         = "lng=";
 let distance    = "distance="
 
+let ya_get_planner = "https://api.rasp.yandex.net/v3.0/search/?apikey=0a5bc7a5-f976-4f84-be5c-1ed18dc66e87"
+let transport_types = "transport_types=";
+
+let from            = "from=";
+let to              = "to=";
+
+let limit           = "limit="
+
+let date            = "date="
+
 class TripGoController: UIViewController,UITextFieldDelegate {
     
     // lm
@@ -65,6 +75,8 @@ class TripGoController: UIViewController,UITextFieldDelegate {
     let addPointButton = UIButton(type: .system)
     // reset point
     let resetRouteButton = UIButton(type: .system)
+    // reset point
+    let sharedNavigator  = UIButton(type: .system)
     
     //
     var stackDetail = UIStackView()
@@ -183,7 +195,7 @@ class TripGoController: UIViewController,UITextFieldDelegate {
         search_field.tintColor = .white
         search_field.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2039215686, blue: 0.2745098039, alpha: 1) //
         search_field.layer.cornerRadius = 10
-        search_field.textAlignment = .left
+        search_field.textAlignment = .center
         search_field.font = UIFont.boldSystemFont(ofSize: 16)
         search_field.placeholderRect(forBounds: CGRect(x: 30, y : 0, width: search_field.frame.width - 10, height: search_field.frame.width))
         search_field.placeholder = "Укажите направление"
@@ -286,8 +298,8 @@ class TripGoController: UIViewController,UITextFieldDelegate {
         serachingAdress.numberOfLines = 0
         serachingAdress.textColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         serachingAdress.layer.borderWidth = 1.5
-        serachingAdress.layer.cornerRadius = 10
-        serachingAdress.layer.borderColor = #colorLiteral(red: 0.4929717093, green: 0.4929717093, blue: 0.4929717093, alpha: 1)
+        serachingAdress.layer.cornerRadius = 0.1
+        //serachingAdress.layer.borderColor =
         serachingAdress.textAlignment  = .center
         routingConfigView.addSubview(serachingAdress)
        
@@ -365,7 +377,7 @@ class TripGoController: UIViewController,UITextFieldDelegate {
         toPointButton.isHidden = false
          */
         // additionak point
-        addPointButton.setTitle("Добавить точку", for: .normal)
+        addPointButton.setTitle("+точка", for: .normal)
         addPointButton.setTitleColor(.white, for: .normal)
         addPointButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         addPointButton.tintColor = .white
@@ -380,7 +392,7 @@ class TripGoController: UIViewController,UITextFieldDelegate {
             //marker.bottomMargin.equalToSuperview().inset(5)
             marker.top.equalTo(serachingAdress).inset(45)
             marker.height.equalTo(35)
-            marker.width.equalTo(75)
+            marker.width.equalTo(80)
             marker.left.equalToSuperview().inset(20)
         }
         addPointButton.isHidden = false
@@ -402,9 +414,32 @@ class TripGoController: UIViewController,UITextFieldDelegate {
             marker.top.equalTo(serachingAdress).inset(45)
             marker.height.equalTo(35)
             marker.width.equalTo(100)
+            marker.centerX.equalToSuperview()
             marker.left.equalTo(addPointButton).inset(100)
         }
         resetRouteButton.isHidden = false
+        //
+        // reset route
+        sharedNavigator.setTitle("Навигатор", for: .normal)
+        sharedNavigator.setTitleColor(.white, for: .normal)
+        sharedNavigator.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        sharedNavigator.tintColor = .white
+        sharedNavigator.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)//#colorLiteral(red: 0.1676526818, green: 0.1903925995, blue: 0.2580723713, alpha: 1)
+        sharedNavigator.layer.cornerRadius = 10
+        sharedNavigator.layer.shadowRadius = 1.5
+        sharedNavigator.layer.shadowColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        routingConfigView.addSubview(sharedNavigator)
+        sharedNavigator.addTarget(self, action: #selector(self.sharedAction(_:)), for: .touchUpInside)
+
+        sharedNavigator.snp.makeConstraints { (marker) in
+            //marker.bottomMargin.equalToSuperview().inset(-8)
+            marker.top.equalTo(serachingAdress).inset(45)
+            marker.height.equalTo(35)
+            marker.width.equalTo(100)
+            marker.left.equalTo(resetRouteButton).inset(150)
+        }
+        sharedNavigator.isHidden = false
+        //
         
         routingConfigView.addSubview(viewDetail)
         viewDetail.backgroundColor = .clear//#colorLiteral(red: 0.1676526818, green: 0.1903925995, blue: 0.2580723713, alpha: 1)
@@ -506,6 +541,20 @@ class TripGoController: UIViewController,UITextFieldDelegate {
         
         self.mapView.set(zoomLevel: self.mapView.zoomLevel + 2, animation: .linear)
         
+    }
+    @objc func sharedAction(_ sender:UIButton)
+    {
+        let url_base = "yandexnavi://build_route_on_map?"+"lat_from=\(route_points.first?.latitude)"
+        + "&" + "lon_from=\(route_points.first?.longitude)" + "&"
+        + "lat_to=\(route_points.last?.latitude)" + "&"
+        + "lon_to=\(route_points.last?.longitude)"
+        
+        let url_s = "yandexnavi://build_route_on_map?lat_from=\(tempPosition.latitude)&lon_from=\(tempPosition.longitude)&lat_to=\(search_point.latitude)&lon_to=\(search_point.longitude)"
+   
+        
+        if let url = URL(string: url_s) {
+            UIApplication.shared.open(url)
+        }
     }
     // minus action
     @objc func minusAction(_ sender:UIButton) {

@@ -56,7 +56,7 @@ class MainWindowTabsTrip: UITabBarController,UITabBarControllerDelegate {
         tabFour.tabBarItem = tabTreeBarItem4
         
         
-        self.viewControllers = [tabOne, tabTwo, tabTree , tabFour ]
+        self.viewControllers = [tabOne, tabTwo/*, tabTree ,*/, tabFour ]
     }
     
     // UITabBarControllerDelegate method

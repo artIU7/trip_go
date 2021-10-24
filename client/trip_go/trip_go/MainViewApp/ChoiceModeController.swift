@@ -30,6 +30,7 @@ class ChoiceModeController: UIViewController {
             marker.left.right.equalToSuperview().inset(30)
             marker.top.equalToSuperview().inset(80)
         }
+        /*
         // button continie
         let tripCreatePush = UIButton(type: .system)
         tripCreatePush.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
@@ -46,7 +47,7 @@ class ChoiceModeController: UIViewController {
         }
         
         tripCreatePush.addTarget(self, action: #selector(showApp), for: .touchUpInside)
-        
+        */
         // button continie
         let tripGoPush = UIButton(type: .system)
         tripGoPush.backgroundColor = #colorLiteral(red: 0.3759136491, green: 0.6231091984, blue: 0.6783652551, alpha: 1)
@@ -60,10 +61,11 @@ class ChoiceModeController: UIViewController {
             marker.rightMargin.equalToSuperview().inset(20)
             marker.width.equalTo(200)
             marker.height.equalTo(40)
+            marker.centerX.equalToSuperview()
         }
         
         tripGoPush.addTarget(self, action: #selector(showApp), for: .touchUpInside)
-        // page controll
+        /// page controll
         let pageControl = UIPageControl()
             pageControl.frame = CGRect(x: 100, y: 100, width: 300, height: 300)
             pageControl.numberOfPages = 2;

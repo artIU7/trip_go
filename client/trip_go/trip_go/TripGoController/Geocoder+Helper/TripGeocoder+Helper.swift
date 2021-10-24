@@ -55,8 +55,13 @@ extension TripGoController {
             
             let city_url = ya_get_city+"&"+lat+"\(search_point.latitude)"+"&"+lng+"\(search_point.longitude)"+"&"+distance+"\(5)"
 
-            
+            /*
+            let planer_url =
+                ya_get_planner+"&"+transport_types+"plane"+"&"+from+"\(model_uid.first_uid)"+"&"+to+"\(model_uid.finish_uid)"+"&"+limit+"\(1)"+data+"24.02"
+            */
             fetch_ya_api(urlString: city_url)
+            
+            //fetch_ya_api_planer(urlString: <#T##String#>)
             model_uid.finish_uid = temp_uid_city
             
             

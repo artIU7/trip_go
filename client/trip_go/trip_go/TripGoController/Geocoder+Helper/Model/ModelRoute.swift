@@ -12,6 +12,8 @@ struct ModelRouteUID {
     var finish_uid  : String
     var type_route  : String
     init(){
-        
+        first_uid = String()
+        finish_uid = String()
+        type_route = String()
     }
 }
